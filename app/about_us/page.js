@@ -9,7 +9,7 @@ export const Crew = () => {
       <main className="mainContent">
         <h1>About us</h1>
         <section className="card">
-          <h2>Our Valueus</h2>
+          <h2>Our Values</h2>
           <OurValues />
         </section>
         
