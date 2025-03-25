@@ -30,11 +30,6 @@ const OurPartners = () => {
               alt={partner.name}
               style={{ width: '150px', height: 'auto', marginBottom: '15px' }}
             />
-            <p
-              style={{ margin: '10px 0', fontSize: '16px', fontWeight: 'bold' }}
-            >
-              {partner.name}
-            </p>
           </div>
         ))}
       </div>
