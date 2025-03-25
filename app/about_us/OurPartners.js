@@ -10,9 +10,9 @@ const OurPartners = () => {
 
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
-      <p style={{ marginBottom: '30px' }}>
+      <h3 style={{ marginBottom: '30px' }}>
         We collaborate with progressive, ambitious brands we believe in.
-      </p>
+      </h3>
       <div
         style={{
           display: 'grid',
