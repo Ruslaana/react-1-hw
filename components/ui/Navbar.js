@@ -1,7 +1,8 @@
-"use client"
+'use client';
+
 import classNames from 'classnames';
 import { usePathname } from 'next/navigation';
-import Link from 'next/link'
+import Link from 'next/link';
 
 import styles from './Navbar.module.css';
 
@@ -17,43 +18,50 @@ const navbarItems = [
   {
     title: 'NASA COLLABORATION',
     link: '/nasa_collaboration',
-  }
+  },
 ];
 
+const NavItem = ({ title, link, isActive }) => {
+  const [number, ...titleParts] = title.split(' ');
+  const displayTitle = titleParts.join(' '); 
+
+  return (
+    <li
+      className={classNames(styles.navbarLinks, {
+        [styles.isLinkActive]: isActive,
+      })}
+    >
+      <Link href={link}>
+        <b>{number}</b> {displayTitle}
+      </Link>
+    </li>
+  );
+};
+
 export const Navbar = () => {
-  const currentPath = usePathname()
+  const currentPath = usePathname();
 
   return (
     <header className={styles.headerContainer}>
       <div className={styles.navbarLogo}>
-        <a href="/"><img src="/shared/logo.svg" alt="" /> GALACTICA</a>
+        <a href="/">
+          <img src="/shared/logo.svg" alt="" /> GALACTICA
+        </a>
       </div>
       <div className={styles.decorativeLine} />
       <nav className={styles.navbar}>
         <div className={styles.navbarBG} />
         <ul className={styles.navbarList}>
-          {/* TASK - React 1 week 2 */}
-          {/* Create a <NavItem> component, which accepts the following:  */}
-          {/* title, link, isActive  */}
-          <li className={classNames(styles.navbarLinks, {
-            [styles.isLinkActive]: navbarItems[0].link === currentPath,
-          })}>
-            <Link href={navbarItems[0].link}><b>01</b> {navbarItems[0].title}</Link>
-          </li>
-          <li className={classNames(styles.navbarLinks, {
-            [styles.isLinkActive]: navbarItems[1].link === currentPath,
-          })}>
-            <Link href={navbarItems[1].link}><b>02</b> {navbarItems[1].title}</Link>
-          </li>
-          <li className={classNames(styles.navbarLinks, {
-            [styles.isLinkActive]: navbarItems[2].link === currentPath,
-          })}>
-            <Link href={navbarItems[2].link}><b>03</b> NASA COLLABORATION</Link>
-          </li>
-          {/* TASK - React 1 week 3 */}
-          {/* replace repeating content by using navbarItems.map(() => <NavLink />) */}
+          {navbarItems.map((item, index) => (
+            <NavItem
+              key={index}
+              title={`${String(index + 1).padStart(2, '0')} ${item.title}`}
+              link={item.link}
+              isActive={item.link === currentPath}
+            />
+          ))}
         </ul>
       </nav>
     </header>
   );
-}
+};
