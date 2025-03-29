@@ -1,3 +1,5 @@
+import { FaFacebook, FaInstagram, FaTiktok, FaLinkedin, FaGoogle } from 'react-icons/fa';
+
 export const pages = [
   { href: '/', title: 'Home' },
   { href: '/about', title: 'About' },
@@ -6,29 +8,9 @@ export const pages = [
 ];
 
 export const socialMediaLinks = [
-  {
-    url: 'https://facebook.com',
-    title: 'Facebook',
-    icon: '/socialmedia/facebook.png',
-  },
-  {
-    url: 'https://instagram.com',
-    title: 'Instagram',
-    icon: '/socialmedia/instagram.png',
-  },
-  {
-    url: 'https://tiktok.com',
-    title: 'Tiktok',
-    icon: '/socialmedia/tiktok.png',
-  },
-  {
-    url: 'https://linkedin.com',
-    title: 'LinkedIn',
-    icon: '/socialmedia/linkedin.png',
-  },
-  {
-    url: 'https://google.com',
-    title: 'On the streets at night',
-    icon: '/socialmedia/google.png',
-  },
+  { url: 'https://facebook.com', title: 'Facebook', Icon: FaFacebook },
+  { url: 'https://instagram.com', title: 'Instagram', Icon: FaInstagram },
+  { url: 'https://tiktok.com', title: 'TikTok', Icon: FaTiktok },
+  { url: 'https://linkedin.com', title: 'LinkedIn', Icon: FaLinkedin },
+  { url: 'https://google.com', title: 'Google', Icon: FaGoogle },
 ];

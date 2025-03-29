@@ -33,8 +33,8 @@ export const Footer = () => {
       <div className={styles.footerLinks}>
         <h3>Follow us</h3>
         <ul className={styles.footerList}>
-          {socialMediaLinks.map(({ url, title, icon }) => (
-            <SocialMediaItem key={url} url={url} title={title} icon={icon} />
+          {socialMediaLinks.map(({ url, title, Icon }) => (
+            <SocialMediaItem key={url} url={url} title={title} Icon={Icon} />
           ))}
         </ul>
       </div>
