@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram, FaTiktok, FaLinkedin, FaGoogle } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTiktok, FaLinkedin } from 'react-icons/fa';
 
 export const pages = [
   { href: '/', title: 'Home' },
@@ -12,5 +12,4 @@ export const socialMediaLinks = [
   { url: 'https://instagram.com', title: 'Instagram', Icon: FaInstagram },
   { url: 'https://tiktok.com', title: 'TikTok', Icon: FaTiktok },
   { url: 'https://linkedin.com', title: 'LinkedIn', Icon: FaLinkedin },
-  { url: 'https://google.com', title: 'Google', Icon: FaGoogle },
 ];
