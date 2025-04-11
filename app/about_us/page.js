@@ -1,4 +1,3 @@
-import styles from './page.module.css';
 import OurValues from "./OurValues";
 import OurCrew from "./OurCrew";
 import OurPartners from "./OurPartners";

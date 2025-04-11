@@ -1,7 +1,10 @@
-"use client"
+'use client';
 
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import styles from './Footer.module.css';
+import { pages, socialMediaLinks } from './data';
+import SocialMediaItem from './SocialMediaItem';
 
 export const Footer = () => {
   const path = usePathname().split('?')[0];
@@ -15,45 +18,26 @@ export const Footer = () => {
         </p>
         <p>&copy; 2024 Galactica. All rights reserved.</p>
       </div>
-      {/* TASK - React 1 week 2 */}
-      {/* Create a new List for the Pages */}
-      {/* We need to use the <Link /> component here */}
-      {/* <div className={styles.pages}>
+
+      <div className={styles.pages}>
         <h3>Pages</h3>
         <ul>
-          <li> <Link/> </li>
-          ...
+          {pages.map(({ href, title }) => (
+            <li key={href}>
+              <Link href={href}>{title}</Link>
+            </li>
+          ))}
         </ul>
-      </div> */}
-      {/* Docs for the Link: https://nextjs.org/docs/pages/api-reference/components/link */}
+      </div>
 
-      {/* TASK - React 1 week 1 */}
-      {/* Add a new list item for LINKEDIN */}
       <div className={styles.footerLinks}>
         <h3>Follow us</h3>
         <ul className={styles.footerList}>
-          <li>
-            <a href="https://facebook.com">Facebook</a>
-          </li>
-          <li>
-            <a href="https://instagram.com">Instagram</a>
-          </li>
-          <li>
-            <a href="https://tiktok.com">Tiktok</a>
-          </li>
-          <li>
-            <a href="https://linkedin.com">LinkedIn</a>
-          </li>
-          <li>
-            <a href="https://google.com">On the streets at night</a>
-          </li>
-          {/* TASK - React 1 week 2 */}
-          {/* Create a <SocialMediaItem /> component and replace all of the list items! */}
-          {/* it should accept the following props */}
-          {/* url, title, icon */}
-          {/* For the icons, you can download 1-2 social media icons for testing and put it in the /public/socialmedia/ folder */}
+          {socialMediaLinks.map(({ url, title, Icon }) => (
+            <SocialMediaItem key={url} url={url} title={title} Icon={Icon} />
+          ))}
         </ul>
       </div>
     </footer>
   );
-}
+};
